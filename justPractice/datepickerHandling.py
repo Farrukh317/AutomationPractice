@@ -24,7 +24,7 @@ while True:
     else:
         navForward=driver.find_element(By.XPATH, "//span[@class='ui-icon ui-icon-circle-triangle-e']")
         navForward.click()
-##########################
+########################
 #################
 
 time.sleep(3)
