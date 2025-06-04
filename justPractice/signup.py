@@ -10,8 +10,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 driver = webdriver.Chrome()
 
-driver.get("https://env1.yuzee.click")
 driver.maximize_window()
+driver.get("https://env1.yuzee.click")
 
 try:
     sliders = WebDriverWait(driver, 30).until(
@@ -41,6 +41,9 @@ driver.find_element(By.CSS_SELECTOR, "div[aria-label='Wednesday, May 10, 1950'] 
 
 # Open the gender dropdown
 driver.find_element(By.XPATH, "//ng-select[@id='gender']//div[@role='combobox']").click()
+
+
+
 
 # Wait and click the 'Male' option based on visible text
 WebDriverWait(driver, 10).until(
