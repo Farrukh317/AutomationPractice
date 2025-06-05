@@ -15,6 +15,7 @@ driver.find_element(By.XPATH, "//input[@id='datepicker']").click()
 
 requiredMonth="July"
 requiredYear="2027"
+requiredDate="7"
 
 while True:
     month = driver.find_element(By.XPATH, "//span[@class='ui-datepicker-month']").text
@@ -24,8 +25,15 @@ while True:
     else:
         navForward=driver.find_element(By.XPATH, "//span[@class='ui-icon ui-icon-circle-triangle-e']")
         navForward.click()
-########################
-#################
+
+dates = driver.find_elements(By.XPATH, "//div[@id='ui-datepicker-div']//tbody/tr/td")
+
+for ele in dates:
+    if ele.text == requiredDate:
+        ele.click()
+        break
+
+
 
 time.sleep(3)
 driver.quit()
